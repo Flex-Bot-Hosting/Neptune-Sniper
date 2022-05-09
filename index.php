@@ -2,7 +2,7 @@
 <head>
     <link rel="stylesheet" href="/css/main.css" />
     <title>Neptune Sniper</title>
-    <link rel="icon" type="image/png" href="/assets/favicon.png">
+    <link rel="icon" type="image/png" href="/assets/favicon.png" />
 </head>
 <body>
 <h1>Neptune Sniper</h1>
