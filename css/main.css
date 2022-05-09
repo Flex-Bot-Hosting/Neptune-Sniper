@@ -1,0 +1,13 @@
+table {
+  border-collapse: collapse;
+  width: 100%;
+  color: #4b70dd;
+  font-family: monospace;
+  font-size: 25px;
+  text-align: left;
+  }
+th {
+  background-color: #4b70dd;
+  color: white;
+}
+tr:nth-child(even) {background-color: #f2f2f2}
