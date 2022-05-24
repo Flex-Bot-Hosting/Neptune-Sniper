@@ -21,6 +21,7 @@ $json_data = json_decode($json,true);
   
 // Display data
 echo $json_data;
+echo $json;
 echo $json->name;
 }
 ?>
