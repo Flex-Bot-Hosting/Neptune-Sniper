@@ -11,20 +11,20 @@
   </form>
 <?php
 if(isset($_GET['searchquery'])) {
-$search = $_GET['searchquery'];
-  
-// Read the JSON file 
-$json = file_get_contents('https://api.mojang.com/users/profiles/minecraft/$search');
-  
-// Decode the JSON file
-$json_data = json_decode($json,true);
+    $search = $_GET['searchquery'];
 
-$username = $json_data['name'];
-$uuid = $json_data['id'];
-  
-// Display data
-echo "$username";
-echo "$uuid";
+    // Read the JSON file 
+    $json = file_get_contents('https://api.mojang.com/users/profiles/minecraft/$_GET['searchquery']');
+
+    // Decode the JSON file
+    $json_data = json_decode($json,true);
+
+    $username = $json_data['name'];
+    $uuid = $json_data['id'];
+
+    // Display data
+    echo "<h1>$username";
+    echo "$uuid";
 }
 ?>
 </body>
