@@ -14,7 +14,7 @@ if(isset($_GET['searchquery'])) {
     $search = $_GET['searchquery'];
 
     // Read the JSON file 
-    $json = file_get_contents("https://api.mojang.com/users/profiles/minecraft/$_GET['searchquery']");
+    $json = file_get_contents("https://api.mojang.com/users/profiles/minecraft/$search");
 
     // Decode the JSON file
     $json_data = json_decode($json,true);
@@ -25,6 +25,7 @@ if(isset($_GET['searchquery'])) {
     // Display data
     echo "<h1>$username";
     echo "$uuid";
+    echo "https://api.mojang.com/users/profiles/minecraft/$search";
 }
 ?>
 </body>
