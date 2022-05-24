@@ -11,7 +11,7 @@
   </form>
 <?php
 if(isset($_GET['searchquery'])) {
-$search = $_GET['searchquery']
+$search = $_GET['searchquery'];
 $url = 'https://api.mojang.com/users/profiles/minecraft/$search';
 $JSON = file_get_contents($url);
 
