@@ -24,6 +24,7 @@ $uuid = $json_Data['id'];
   
 // Display data
 echo "$username";
+echo "$uuid";
 }
 ?>
 </body>
