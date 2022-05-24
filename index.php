@@ -12,12 +12,12 @@
 <?php
 if(isset($_GET['searchquery'])) {
     $search = $_GET['searchquery'];
-    $jurl = 'https://api.mojang.com/users/profiles/minecraft/$search';
+    $jurl = 'https://api.mojang.com/users/profiles/minecraft/Rodney_RWR';
     $jdata = file_get_contents($jurl); 
     $json = json_decode($jdata);
 
-    $username = $json[0]->name;
-    $uuid = $json[0]->id;
+    $username = $json->name;
+    $uuid = $json->id;
 
     echo "<h2>$username</h2>";
     echo "<h3>UUID: $uuid</h3>";
