@@ -20,7 +20,7 @@ $json = file_get_contents('https://api.mojang.com/users/profiles/minecraft/Rodne
 $json_data = json_decode($json,true);
 
 $username = $json_data['name'];
-$uuid = $json_Data['id'];
+$uuid = $json_data['id'];
   
 // Display data
 echo "$username";
