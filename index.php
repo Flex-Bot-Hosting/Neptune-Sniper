@@ -14,17 +14,13 @@ if(isset($_GET['searchquery'])) {
 $search = $_GET['searchquery'];
   
 // Read the JSON file 
-$json = file_get_contents('https://api.mojang.com/users/profiles/minecraft/$search');
+$json = file_get_contents('https://api.mojang.com/users/profiles/minecraft/Rodney_RWR');
   
 // Decode the JSON file
 $json_data = json_decode($json,true);
   
 // Display data
 print_r($json_data);
-
-    echo "<h2>$username</h2>";
-    echo "<h3>UUID: $uuid</h3>";
-    echo "<h3><a href='https://namemc.com/$username'>NameMC Link</a></h3>";
 }
 ?>
 </body>
