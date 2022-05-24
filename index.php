@@ -28,7 +28,7 @@ if(isset($_GET['searchquery'])) {
         // Display data
         echo "<h2>$username</h2> <br>";
         echo "<h3>UUID: $uuid</h3> <br>";
-        echo "<h3>Skin: http://textures.minecraft.net/texture/$uuid</h3>";
+        echo "<h3>Skin: <img src='http://textures.minecraft.net/texture/$uuid' alt=''></h3>";
         echo "<h3><a href='https://namemc.com/$username'>NameMC Link</a></h3>";
     }
 }
