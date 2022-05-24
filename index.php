@@ -20,7 +20,8 @@ $json = file_get_contents('https://api.mojang.com/users/profiles/minecraft/Rodne
 $json_data = json_decode($json,true);
   
 // Display data
-echo $json_data[0]->name;
+echo $json_data;
+echo $json->name;
 }
 ?>
 </body>
