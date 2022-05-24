@@ -23,7 +23,7 @@ $username = $json_data['name'];
 $uuid = $json_Data['id'];
   
 // Display data
-echo "username";
+echo "$username";
 }
 ?>
 </body>
