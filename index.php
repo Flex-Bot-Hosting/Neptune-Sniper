@@ -19,8 +19,8 @@ $json = file_get_contents('https://api.mojang.com/users/profiles/minecraft/Rodne
 // Decode the JSON file
 $json_data = json_decode($json,true);
 
-$username = $json_data['name']
-$uuid = $json_Data['id']
+$username = $json_data['name'];
+$uuid = $json_Data['id'];
   
 // Display data
 echo "username";
