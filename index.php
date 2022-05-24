@@ -10,7 +10,7 @@
       <input type="text" placeholder="Username or UUID" name="searchquery">
   </form>
 <?php
-if $_GET {
+if(isset($_GET['searchquery'])) {
     $search = $_GET['searchquery'];
     $jurl = 'https://api.mojang.com/users/profiles/minecraft/$search';
     $jdata = file_get_contents($url); 
