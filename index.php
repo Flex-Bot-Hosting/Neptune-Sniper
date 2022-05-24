@@ -12,15 +12,15 @@
 <?php
 if(isset($_GET['searchquery'])) {
 $search = $_GET['searchquery'];
-$url = 'https://api.mojang.com/users/profiles/minecraft/$search';
-$JSON = file_get_contents($url);
-
-// echo the JSON (you can echo this to JavaScript to use it there)
-echo $JSON;
-
-// You can decode it to process it in PHP
-$data = json_decode($JSON);
-var_dump($data);
+  
+// Read the JSON file 
+$json = file_get_contents('https://api.mojang.com/users/profiles/minecraft/$search');
+  
+// Decode the JSON file
+$json_data = json_decode($json,true);
+  
+// Display data
+print_r($json_data);
 
     echo "<h2>$username</h2>";
     echo "<h3>UUID: $uuid</h3>";
