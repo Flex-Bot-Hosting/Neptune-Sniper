@@ -16,8 +16,8 @@ if(isset($_GET['searchquery'])) {
     $jdata = file_get_contents($jurl); 
     $json = json_decode($jdata);
 
-    $username = $json->name;
-    $uuid = $json->id;
+    $username = $json[0]->name;
+    $uuid = $json[0]->id;
 
     echo "<h2>$username</h2>";
     echo "<h3>UUID: $uuid</h3>";
