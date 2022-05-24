@@ -8,20 +8,21 @@
 <h1>Neptune Sniper</h1>
   <form action="/" method="get">
       <input type="text" placeholder="Username or UUID" name="searchquery">
-      <input type="submit" name="submit">
   </form>
 <?php
-$search = $_GET['searchquery'];
-$jurl = 'https://api.mojang.com/users/profiles/minecraft/$search';
-$jdata = file_get_contents($url); 
-$json = json_decode($data);
+if $_GET {
+    $search = $_GET['searchquery'];
+    $jurl = 'https://api.mojang.com/users/profiles/minecraft/$search';
+    $jdata = file_get_contents($url); 
+    $json = json_decode($data);
 
-$username = $json->name;
-$uuid = $json->uuid;
-    
-echo "<h2>$username</h2>";
-echo "<h3>UUID: $uuid</h3>";
-echo "<h3><a href='https://namemc.com/$username'>NameMC Link</a></h3>";
+    $username = $json->name;
+    $uuid = $json->uuid;
+
+    echo "<h2>$username</h2>";
+    echo "<h3>UUID: $uuid</h3>";
+    echo "<h3><a href='https://namemc.com/$username'>NameMC Link</a></h3>";
+}
 ?>
 </body>
 </html>
