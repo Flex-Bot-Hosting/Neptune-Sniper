@@ -11,13 +11,16 @@
   </form>
 <?php
 if(isset($_GET['searchquery'])) {
-    $search = $_GET['searchquery'];
-    $jurl = 'https://api.mojang.com/users/profiles/minecraft/$search';
-    $jdata = file_get_contents($jurl); 
-    $json = json_decode($jdata);
+$search = $_GET['searchquery']
+$url = 'https://api.mojang.com/users/profiles/minecraft/$search';
+$JSON = file_get_contents($url);
 
-    $username = $json->name;
-    $uuid = $json->id;
+// echo the JSON (you can echo this to JavaScript to use it there)
+echo $JSON;
+
+// You can decode it to process it in PHP
+$data = json_decode($JSON);
+var_dump($data);
 
     echo "<h2>$username</h2>";
     echo "<h3>UUID: $uuid</h3>";
