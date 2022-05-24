@@ -26,9 +26,9 @@ if(isset($_GET['searchquery'])) {
         $uuid = $json_data['id'];
 
         // Display data
-        echo "<h1>$username";
-        echo "$uuid";
-        echo "https://api.mojang.com/users/profiles/minecraft/$search";
+        echo "<h2>$username</h2> <br>";
+        echo "<h3>UUID: $uuid</h3> <br>";
+        echo "<h3><a href='https://namemc.com/$username'>NameMC Link</a></h3>";
     }
 }
 ?>
