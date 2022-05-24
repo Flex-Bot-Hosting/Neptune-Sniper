@@ -1,7 +1,7 @@
 <?php
 $accname1 = "Flexium";
 $accsearch1 = "-4";
-$acclink = "https://namemc.com/$accname1";
+$acclink = "<a href='https://namemc.com/$accname1'>Click Here</a>";
 $accavail1 = "<p style='color: red;'>Not-Available</p>"
 ?>
 <html>
