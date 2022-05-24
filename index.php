@@ -1,9 +1,3 @@
-<?php
-$accname1 = "Flexium";
-$accsearch1 = "1";
-$acclink = "<a href='https://namemc.com/$accname1'>Click Here</a>";
-$accavail1 = "<p style='color: red;'>Not-Available</p>"
-?>
 <html>
 <head>
     <link rel="stylesheet" href="/css/main.css" />
@@ -12,56 +6,22 @@ $accavail1 = "<p style='color: red;'>Not-Available</p>"
 </head>
 <body>
 <h1>Neptune Sniper</h1>
-    <table>
-    <tbody><tr>
-        <th>Name</th>
-        <th>Searches (Month)</th>
-        <th>NameMC Link</th>
-        <th>Availability</th>
-    </tr>
-    <tr>
-    <td>
-        <?php echo "$accname1";?>
-    </td>
-    <td>
-        <?php echo "$accsearch1";?>
-    </td>
-    <td>
-        <?php echo "$acclink";?>
-    </td>
-    <td>
-        <?php echo "$accavail1";?>
-    </td>
-    </tr>
-    <tr>
-    <td>
-        (php api code name)
-    </td>
-    <td>
-        (php api code searches)
-    </td>
-    <td>
-        (php api code link)
-    </td>
-    <td>
-        (php api code available)
-    </td>
-    </tr>
-    <tr>
-    <td>
-        (php api code name)
-    </td>
-    <td>
-        (php api code searches)
-    </td>
-    <td>
-        (php api code link)
-    </td>
-    <td>
-        (php api code available)
-    </td>
-    </tr>
+  <form action="/" method="get">
+      <input type="text" placeholder="Username or UUID" name="searchquery">
+      <input type="submit" name="submit">
+  </form>
+<?php
+$search = $_GET['searchquery'];
+$jurl = 'https://api.mojang.com/users/profiles/minecraft/$search';
+$jdata = file_get_contents($url); 
+$json = json_decode($data);
 
-    </tbody></table>
+$username = $json->name;
+$uuid = $json->uuid;
+    
+echo "<h2>$username</h2>";
+echo "<h3>UUID: $uuid</h3>";
+echo "<h3><a href='https://namemc.com/$username'>NameMC Link</a></h3>";
+?>
 </body>
 </html>
