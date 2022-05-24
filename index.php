@@ -28,7 +28,7 @@ if(isset($_GET['searchquery'])) {
         // Display data
         echo "<h2>$username</h2> <br>";
         echo "<h3>UUID: $uuid</h3> <br>";
-        echo "<h3>Skin: <img src='https://crafatar.com/avatars/$uuid' alt='' /></h3>";
+        echo "<h3>Skin: <applet code='net.minecraft.skintest.ModelPreviewApplet' archive='http://www.minecraft.net/skin/skintest.jar' codebase='.' width='320' height='320'> <param name='name' value='535' /> </applet></h3>";
         echo "<h3><a href='https://namemc.com/$username'>NameMC Link</a></h3>";
     }
 }
