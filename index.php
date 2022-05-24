@@ -14,7 +14,7 @@ if(isset($_GET['searchquery'])) {
 $search = $_GET['searchquery'];
   
 // Read the JSON file 
-$json = file_get_contents('https://api.mojang.com/users/profiles/minecraft/Rodney_RWR');
+$json = file_get_contents('https://api.mojang.com/users/profiles/minecraft/$search');
   
 // Decode the JSON file
 $json_data = json_decode($json,true);
