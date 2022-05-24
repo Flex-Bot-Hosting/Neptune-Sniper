@@ -6,12 +6,12 @@
 </head>
 <body>
 <h1>Neptune Sniper</h1>
-  <form action="#" method="get">
+  <form action="/" method="post">
       <input type="text" placeholder="Username or UUID" name="searchquery">
   </form>
 <?php
-if(isset($_GET['searchquery'])) {
-    $search = $_GET['searchquery'];
+if(isset($_POST['searchquery'])) {
+    $search = $_POST['searchquery'];
     $jurl = 'https://api.mojang.com/users/profiles/minecraft/$search';
     $jdata = file_get_contents($url); 
     $json = json_decode($data);
