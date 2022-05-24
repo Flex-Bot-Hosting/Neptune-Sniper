@@ -1,6 +1,6 @@
 <?php
 $accname1 = "Flexium";
-$accsearch1 = "-4";
+$accsearch1 = "1";
 $acclink = "<a href='https://namemc.com/$accname1'>Click Here</a>";
 $accavail1 = "<p style='color: red;'>Not-Available</p>"
 ?>
@@ -15,7 +15,7 @@ $accavail1 = "<p style='color: red;'>Not-Available</p>"
     <table>
     <tbody><tr>
         <th>Name</th>
-        <th>Searches</th>
+        <th>Searches (Month)</th>
         <th>NameMC Link</th>
         <th>Availability</th>
     </tr>
