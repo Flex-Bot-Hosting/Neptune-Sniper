@@ -12,7 +12,7 @@
 <?php
 if(isset($_GET['searchquery'])) {
     $search = $_GET['searchquery'];
-    $jurl = 'https://api.mojang.com/users/profiles/minecraft/Rodney_RWR';
+    $jurl = 'https://api.mojang.com/users/profiles/minecraft/$search';
     $jdata = file_get_contents($jurl); 
     $json = json_decode($jdata);
 
