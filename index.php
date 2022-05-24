@@ -1,3 +1,9 @@
+<?php
+$accname1 = "Flexium";
+$accsearch1 = "-4";
+$acclink = "https://namemc.com/$accname1";
+$accavail1 = "<p style='color: red;'>Not-Available</p>"
+?>
 <html>
 <head>
     <link rel="stylesheet" href="/css/main.css" />
@@ -15,16 +21,16 @@
     </tr>
     <tr>
     <td>
-        (php api code name)
+        <?php echo "$accname1";?>
     </td>
     <td>
-        (php api code searches)
+        <?php echo "$accsearch1";?>
     </td>
     <td>
-        (php api code link)
+        <?php echo "$acclink";?>
     </td>
     <td>
-        (php api code available)
+        <?php echo "$accavail1";?>
     </td>
     </tr>
     <tr>
