@@ -1,6 +1,6 @@
 body {
   color: #4b70dd;
-  background: #6d6d6d;
+  background: #333333;
   font-family: monospace;
 }
 
@@ -25,5 +25,8 @@ input[type=search], select {
   display: inline-block;
   border: 1px solid #ccc;
   border-radius: 4px;
+  background: #333333;
+  border-color: #6d6d6d;
+  color: #4b70dd;
   box-sizing: border-box;
 }
