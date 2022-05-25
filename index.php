@@ -7,7 +7,7 @@
 <body>
 <h1>Neptune Sniper</h1>
   <form action="/" method="get">
-      <input type="search" placeholder="Username or UUID" name="searchquery">
+      <input type="search" placeholder="Username or UUID" autocorrect="off" spellcheck="false" name="searchquery">
   </form>
 <?php
 if(isset($_GET['searchquery'])) {
