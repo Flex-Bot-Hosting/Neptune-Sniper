@@ -25,8 +25,8 @@ input[type=search], select {
   display: inline-block;
   border: 1px solid #ccc;
   border-radius: 4px;
-  background: #333333;
-  border-color: #666666;
+  background: #666666;
+  border-color: #333333;
   color: #4b70dd;
   box-sizing: border-box;
 }
