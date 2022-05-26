@@ -17,7 +17,11 @@ if(isset($_GET['searchquery'])) {
         }
 
     // Read the JSON file
-    $json = file_get_contents("https://api.mojang.com/users/profiles/minecraft/$var0");
+    if(strlen($search) > 16) {
+        $json = file_get_contents("https://api.mojang.com/user/profile/$var0");
+  } else {
+        $json = file_get_contents("https://api.mojang.com/users/profiles/minecraft/$var0");
+    }
 
     // Decode the JSON file
     $json_data = json_decode($json,true);
@@ -35,7 +39,11 @@ if(isset($_GET['searchquery'])) {
         echo "<h3><a href='https://namemc.com/$username'>NameMC Link</a></h3>";
     }
         if(isset($var1)) {
-            $json1 = file_get_contents("https://api.mojang.com/users/profiles/minecraft/$var1");
+            if(strlen($search) > 16) {
+                $json1 = file_get_contents("https://api.mojang.com/user/profile/$var0");
+          } else {
+                $json1 = file_get_contents("https://api.mojang.com/users/profiles/minecraft/$var0");
+            }
 
          // Decode the JSON file
             $json_data1 = json_decode($json1,true);
