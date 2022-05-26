@@ -98,8 +98,8 @@ if(isset($_GET['searchquery'])) {
                     if(!isset($json_data2)) {
                         echo "<h2> User does not exsist </h2>";
                   } else {
-                        $username1 = $json_data3['name'];
-                        $uuid1 = $json_data3['id'];
+                        $username3 = $json_data3['name'];
+                        $uuid3 = $json_data3['id'];
 
                 // Display data
                         echo "<h2>$username3</h2> <br>";
