@@ -50,12 +50,14 @@ if(isset($_GET['searchquery'])) {
             $json_data1 = json_decode($json1,true);
 
             if(!isset($json_data1)) {
+                echo "<hr>";
                 echo "<h2> User does not exsist </h2>";
           } else {
                 $username1 = $json_data1['name'];
                 $uuid1 = $json_data1['id'];
 
         // Display data
+                echo "<hr>";
                 echo "<h2>$username1</h2> <br>";
                 echo "<h3>UUID: $uuid1</h3> <br>";
                 echo "<h3>Skin: <img src='https://crafatar.com/renders/body/$uuid1' alt=''></h3>";
@@ -73,12 +75,14 @@ if(isset($_GET['searchquery'])) {
                 $json_data2 = json_decode($json2,true);
 
                 if(!isset($json_data2)) {
+                    echo "<hr>";
                     echo "<h2> User does not exsist </h2>";
               } else {
-                    $username1 = $json_data2['name'];
-                    $uuid1 = $json_data2['id'];
+                    $username2 = $json_data2['name'];
+                    $uuid2 = $json_data2['id'];
 
             // Display data
+                    echo "<hr>";
                     echo "<h2>$username2</h2> <br>";
                     echo "<h3>UUID: $uuid2</h3> <br>";
                     echo "<h3>Skin: <img src='https://crafatar.com/renders/body/$uuid2' alt=''></h3>";
@@ -96,18 +100,45 @@ if(isset($_GET['searchquery'])) {
                     $json_data3 = json_decode($json3,true);
 
                     if(!isset($json_data2)) {
+                        echo "<hr>";
                         echo "<h2> User does not exsist </h2>";
                   } else {
                         $username3 = $json_data3['name'];
                         $uuid3 = $json_data3['id'];
 
                 // Display data
+                        echo "<hr>";
                         echo "<h2>$username3</h2> <br>";
                         echo "<h3>UUID: $uuid3</h3> <br>";
                         echo "<h3>Skin: <img src='https://crafatar.com/renders/body/$uuid3' alt=''></h3>";
                         echo "<h3><a href='https://namemc.com/$username3'>NameMC Link</a></h3>";
                     }
                 }
+                    if(isset($var4)) {
+                        if(strlen($var4) > 16) {
+                            $json4 = file_get_contents("https://api.mojang.com/user/profile/$var4");
+                      } else {
+                            $json4 = file_get_contents("https://api.mojang.com/users/profiles/minecraft/$var4");
+                        }
+
+                     // Decode the JSON file
+                        $json_data4 = json_decode($json4,true);
+
+                        if(!isset($json_data4)) {
+                            echo "<hr>";
+                            echo "<h2> User does not exsist </h2>";
+                      } else {
+                            $username4 = $json_data4['name'];
+                            $uuid4 = $json_data4['id'];
+
+                    // Display data
+                            echo "<hr>";
+                            echo "<h2>$username4</h2> <br>";
+                            echo "<h3>UUID: $uuid4</h3> <br>";
+                            echo "<h3>Skin: <img src='https://crafatar.com/renders/body/$uuid4' alt=''></h3>";
+                            echo "<h3><a href='https://namemc.com/$username4'>NameMC Link</a></h3>";
+                        }
+                    }
 }
 ?>
 </body>
