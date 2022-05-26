@@ -41,9 +41,9 @@ if(isset($_GET['searchquery'])) {
     }
         if(isset($var1)) {
             if(strlen($search) > 16) {
-                $json1 = file_get_contents("https://api.mojang.com/user/profile/$var0");
+                $json1 = file_get_contents("https://api.mojang.com/user/profile/$var1");
           } else {
-                $json1 = file_get_contents("https://api.mojang.com/users/profiles/minecraft/$var0");
+                $json1 = file_get_contents("https://api.mojang.com/users/profiles/minecraft/$var1");
             }
 
          // Decode the JSON file
@@ -64,9 +64,9 @@ if(isset($_GET['searchquery'])) {
         }
             if(isset($var2)) {
             if(strlen($search) > 16) {
-                $json2 = file_get_contents("https://api.mojang.com/user/profile/$var0");
+                $json2 = file_get_contents("https://api.mojang.com/user/profile/$var2");
           } else {
-                $json2 = file_get_contents("https://api.mojang.com/users/profiles/minecraft/$var0");
+                $json2 = file_get_contents("https://api.mojang.com/users/profiles/minecraft/$var2");
             }
 
          // Decode the JSON file
