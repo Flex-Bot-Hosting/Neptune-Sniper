@@ -9,6 +9,7 @@
   <form action="/" method="get">
       <input type="search" placeholder="Username or UUID" autocorrect="off" spellcheck="false" name="searchquery">
   </form>
+    <h4>You can enter up to 10 names seperated by <code>, </code></h4>
 <?php
 if(isset($_GET['searchquery'])) {
     $search = $_GET['searchquery'];
@@ -59,6 +60,29 @@ if(isset($_GET['searchquery'])) {
                 echo "<h3>UUID: $uuid1</h3> <br>";
                 echo "<h3>Skin: <img src='https://crafatar.com/renders/body/$uuid1' alt=''></h3>";
                 echo "<h3><a href='https://namemc.com/$username1'>NameMC Link</a></h3>";
+            }
+        }
+            if(isset($var2)) {
+            if(strlen($search) > 16) {
+                $json2 = file_get_contents("https://api.mojang.com/user/profile/$var0");
+          } else {
+                $json2 = file_get_contents("https://api.mojang.com/users/profiles/minecraft/$var0");
+            }
+
+         // Decode the JSON file
+            $json_data2 = json_decode($json2,true);
+
+            if(!isset($json_data2)) {
+                echo "<h2> User does not exsist </h2>";
+          } else {
+                $username1 = $json_data2['name'];
+                $uuid1 = $json_data2['id'];
+
+        // Display data
+                echo "<h2>$username2</h2> <br>";
+                echo "<h3>UUID: $uuid2</h3> <br>";
+                echo "<h3>Skin: <img src='https://crafatar.com/renders/body/$uuid2' alt=''></h3>";
+                echo "<h3><a href='https://namemc.com/$username2'>NameMC Link</a></h3>";
             }
         }
 }
