@@ -63,28 +63,28 @@ if(isset($_GET['searchquery'])) {
             }
         }
             if(isset($var2)) {
-            if(strlen($var2) > 16) {
-                $json2 = file_get_contents("https://api.mojang.com/user/profile/$var2");
-          } else {
-                $json2 = file_get_contents("https://api.mojang.com/users/profiles/minecraft/$var2");
+                if(strlen($var2) > 16) {
+                    $json2 = file_get_contents("https://api.mojang.com/user/profile/$var2");
+              } else {
+                    $json2 = file_get_contents("https://api.mojang.com/users/profiles/minecraft/$var2");
+                }
+
+             // Decode the JSON file
+                $json_data2 = json_decode($json2,true);
+
+                if(!isset($json_data2)) {
+                    echo "<h2> User does not exsist </h2>";
+              } else {
+                    $username1 = $json_data2['name'];
+                    $uuid1 = $json_data2['id'];
+
+            // Display data
+                    echo "<h2>$username2</h2> <br>";
+                    echo "<h3>UUID: $uuid2</h3> <br>";
+                    echo "<h3>Skin: <img src='https://crafatar.com/renders/body/$uuid2' alt=''></h3>";
+                    echo "<h3><a href='https://namemc.com/$username2'>NameMC Link</a></h3>";
+                }
             }
-
-         // Decode the JSON file
-            $json_data2 = json_decode($json2,true);
-
-            if(!isset($json_data2)) {
-                echo "<h2> User does not exsist </h2>";
-          } else {
-                $username1 = $json_data2['name'];
-                $uuid1 = $json_data2['id'];
-
-        // Display data
-                echo "<h2>$username2</h2> <br>";
-                echo "<h3>UUID: $uuid2</h3> <br>";
-                echo "<h3>Skin: <img src='https://crafatar.com/renders/body/$uuid2' alt=''></h3>";
-                echo "<h3><a href='https://namemc.com/$username2'>NameMC Link</a></h3>";
-            }
-        }
                 if(isset($var3)) {
                     if(strlen($var3) > 16) {
                         $json3 = file_get_contents("https://api.mojang.com/user/profile/$var3");
