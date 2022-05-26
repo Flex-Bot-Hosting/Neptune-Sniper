@@ -13,8 +13,8 @@
 if(isset($_GET['searchquery'])) {
     $search = $_GET['searchquery'];
     foreach (explode(', ', $search) as $key => $value){
-        ${'var'.$key} = $value
-    }
+        ${'var'.$key} = $value;
+        }
 
     // Read the JSON file
     $json = file_get_contents("https://api.mojang.com/users/profiles/minecraft/$var0");
