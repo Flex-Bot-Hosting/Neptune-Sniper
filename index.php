@@ -1,9 +1,3 @@
-<?php
-$accname1 = "Flexium";
-$accsearch1 = "1";
-$acclink = "<a href='https://namemc.com/$accname1'>Click Here</a>";
-$accavail1 = "<p style='color: red;'>Not-Available</p>"
-?>
 <html>
 <head>
     <link rel="stylesheet" href="/css/main.css" />
@@ -12,56 +6,38 @@ $accavail1 = "<p style='color: red;'>Not-Available</p>"
 </head>
 <body>
 <h1>Neptune Sniper</h1>
-    <table>
-    <tbody><tr>
-        <th>Name</th>
-        <th>Searches (Month)</th>
-        <th>NameMC Link</th>
-        <th>Availability</th>
-    </tr>
-    <tr>
-    <td>
-        <?php echo "$accname1";?>
-    </td>
-    <td>
-        <?php echo "$accsearch1";?>
-    </td>
-    <td>
-        <?php echo "$acclink";?>
-    </td>
-    <td>
-        <?php echo "$accavail1";?>
-    </td>
-    </tr>
-    <tr>
-    <td>
-        (php api code name)
-    </td>
-    <td>
-        (php api code searches)
-    </td>
-    <td>
-        (php api code link)
-    </td>
-    <td>
-        (php api code available)
-    </td>
-    </tr>
-    <tr>
-    <td>
-        (php api code name)
-    </td>
-    <td>
-        (php api code searches)
-    </td>
-    <td>
-        (php api code link)
-    </td>
-    <td>
-        (php api code available)
-    </td>
-    </tr>
+  <form action="/" method="get">
+      <input type="search" placeholder="Username or UUID" autocorrect="off" spellcheck="false" name="searchquery">
+  </form>
+    <h4>You can enter up to 10 names seperated by <code>, </code></h4>
+<?php
+if(isset($_GET['searchquery'])) {
+    $search = $_GET['searchquery'];
+    foreach (explode(', ', $search) as $key => $value){
+        ${'var'.$key} = $value;
+        if(strlen($var.$key) > 16) {
+            $json = file_get_contents("https://api.mojang.com/user/profile/$var.$key");
+        } else {
+            $json = file_get_contents("https://api.mojang.com/users/profiles/minecraft/$var.$key");
+        }
 
-    </tbody></table>
+        // Decode the JSON file
+        $json_data = json_decode($json,true);
+
+        if(!isset($json_data)) {
+            echo "<h2> User does not exsist </h2>";
+        } else {
+            $username = $json_data['name'];
+            $uuid = $json_data['id'];
+
+            // Display data
+            echo "<h2>$username</h2> <br>";
+            echo "<h3>UUID: $uuid</h3> <br>";
+            echo "<h3>Skin: <img src='https://crafatar.com/renders/body/$uuid' alt=''></h3>";
+            echo "<h3><a href='https://namemc.com/$username'>NameMC Link</a></h3>";
+        }
+    }
+}
+?>
 </body>
 </html>
