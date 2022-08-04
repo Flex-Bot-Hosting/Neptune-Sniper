@@ -15,14 +15,14 @@ if(isset($_GET['searchquery'])) {
     $search = $_GET['searchquery'];
     foreach (explode(', ', $search) as $key => $value){
         ${'var'.$key} = $value;
-        if(strlen($var.$key) > 16) {
+        if(strlen(${'var'.$key}) > 16) {
             ${'json'.$key} = file_get_contents("https://api.mojang.com/user/profile/${'var'.$key}");
         } else {
             ${'json'.$key} = file_get_contents("https://api.mojang.com/users/profiles/minecraft/${'var'.$key}");
         }
 
         // Decode the JSON file
-        ${'jsondata'.$key} = json_decode($json,true);
+        ${'jsondata'.$key} = json_decode(${'json'.$key},true);
 
         if(!isset(${'jsondata'.$key})) {
             echo "<h2> User does not exsist </h2>";
