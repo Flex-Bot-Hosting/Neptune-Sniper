@@ -9,7 +9,7 @@
   <form action="/" method="get">
       <input type="search" placeholder="Username or UUID" value="<?php echo $_GET['searchquery'];?>" autocorrect="off" spellcheck="false" name="searchquery">
   </form>
-    <h4>You can enter up to 10 names seperated by <code>, </code></h4>
+    <h4>You can enter multiple names sepereated by a colon <code style="color:white;">,</code></h4>
 <?php
 if(isset($_GET['searchquery'])) {
     $search = $_GET['searchquery'];
