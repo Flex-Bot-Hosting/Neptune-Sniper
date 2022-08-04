@@ -7,7 +7,7 @@
 <body>
 <h1>Neptune Sniper</h1>
   <form action="/" method="get">
-      <input type="search" placeholder="Username or UUID" autocorrect="off" spellcheck="false" name="searchquery">
+      <input type="search" placeholder="Username or UUID" value="<?php echo $_GET['searchquery'];?>" autocorrect="off" spellcheck="false" name="searchquery">
   </form>
     <h4>You can enter up to 10 names seperated by <code>, </code></h4>
 <?php
