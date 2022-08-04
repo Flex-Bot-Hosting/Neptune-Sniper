@@ -16,25 +16,25 @@ if(isset($_GET['searchquery'])) {
     foreach (explode(', ', $search) as $key => $value){
         ${'var'.$key} = $value;
         if(strlen($var.$key) > 16) {
-            $json = file_get_contents("https://api.mojang.com/user/profile/$var.$key");
+            ${'json'.$key} = file_get_contents("https://api.mojang.com/user/profile/${$var.$key}");
         } else {
-            $json = file_get_contents("https://api.mojang.com/users/profiles/minecraft/$var.$key");
+            ${'json'.$key} = file_get_contents("https://api.mojang.com/users/profiles/minecraft/${$var.$key}");
         }
 
         // Decode the JSON file
-        $json_data = json_decode($json,true);
+        ${'jsondata'.$key} = json_decode($json,true);
 
-        if(!isset($json_data)) {
+        if(!isset(${'jsondata'.$key})) {
             echo "<h2> User does not exsist </h2>";
         } else {
-            $username = $json_data['name'];
-            $uuid = $json_data['id'];
+            ${'username'.$key} = ${'jsondata'.$key}['name'];
+            ${'uuid'.$key} = ${'jsondata'.$key}['id'];
 
             // Display data
-            echo "<h2>$username</h2> <br>";
-            echo "<h3>UUID: $uuid</h3> <br>";
-            echo "<h3>Skin: <img src='https://crafatar.com/renders/body/$uuid' alt=''></h3>";
-            echo "<h3><a href='https://namemc.com/$username'>NameMC Link</a></h3>";
+            echo "<h2>${'username'.$key}</h2> <br>";
+            echo "<h3>UUID: ${'uuid'.$key}</h3> <br>";
+            echo "<h3>Skin: <img src='https://crafatar.com/renders/body/${'uuid'.$key}' alt=''></h3>";
+            echo "<h3><a href='https://namemc.com/${'username'.$key}'>NameMC Link</a></h3>";
         }
     }
 }
